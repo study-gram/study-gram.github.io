@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="URL과 리소스 #  2.1 인터넷의 리소스 탐색하기 #  URL(Uniform Resource Locator)은 인터넷의 리소스를 가리키는 표준이름이다.
+URL은 전자정보 일부를 가리키고 그것이 어디에 있고 어떻게 접근할 수 있는지 알려준다.
+URL은 브라우저가 정보를 찾는데 필요한 리소스의 위치를 가리킨다.
+URL은 통합 자원 식별자(Uniform Resource Indentifier) 혹은 URI라고 불리는 더 일반화된 부류의 부분집합이다.
+URN(Uniform Resource Name)은 현재 그 리소스가 어디에 존재하든 상관없이 그 이름만으로 리소스를 식별하는데 비해 URL은 리소스가 어디 있느지 설명해서 리소스를 식별한다.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="URL과 리소스 #  2.1 인터넷의 리소스 탐색하기 #  URL(Uniform Resource Locator)은 인터넷의 리소스를 가리키는 표준이름이다.
+URL은 전자정보 일부를 가리키고 그것이 어디에 있고 어떻게 접근할 수 있는지 알려준다.
+URL은 브라우저가 정보를 찾는데 필요한 리소스의 위치를 가리킨다.
+URL은 통합 자원 식별자(Uniform Resource Indentifier) 혹은 URI라고 불리는 더 일반화된 부류의 부분집합이다.
+URN(Uniform Resource Name)은 현재 그 리소스가 어디에 존재하든 상관없이 그 이름만으로 리소스를 식별하는데 비해 URL은 리소스가 어디 있느지 설명해서 리소스를 식별한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" /><meta property="article:section" content="docs" />
+
+
+
+<title>02. Url과 리소스 | StudyGram</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.ec2b90ee96dae874184b44f7d305c8a33d6e1a7a537bb6b5955f6f6abd2a50ab.js" integrity="sha256-7CuQ7pba6HQYS0T30wXIoz1uGnpTe7a1lV9var0qUKs=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://avatars.githubusercontent.com/u/103309504?s=200&amp;v=4" alt="Logo" /><span>StudyGram</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26bcd5de53e4319f2b601752bbfc0e0" class="toggle" checked />
+    <label for="section-b26bcd5de53e4319f2b601752bbfc0e0" class="flex justify-between">
+      <a role="button" class="">HTTP 완벽가이드</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8990c75d12be043f4eefa92935e17823" class="toggle" checked />
+    <label for="section-8990c75d12be043f4eefa92935e17823" class="flex justify-between">
+      <a role="button" class="">I. HTTP 웹의 기초</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/01.HTTP-%EA%B0%9C%EA%B4%80/" class="">01. HTTP 개관</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="active">02. Url과 리소스</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-140a36bd7c0aa79db2f6358c88f05458" class="toggle"  />
+    <label for="section-140a36bd7c0aa79db2f6358c88f05458" class="flex justify-between">
+      <a role="button" class="">Ii. HTTP 아키텍처</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e53409e523a6780c2544e3baf04df516" class="toggle"  />
+    <label for="section-e53409e523a6780c2544e3baf04df516" class="flex justify-between">
+      <a role="button" class="">Iii. 식별, 인가, 보안</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a63715ac1a7980191779803ea59e060f" class="toggle"  />
+    <label for="section-a63715ac1a7980191779803ea59e060f" class="flex justify-between">
+      <a role="button" class="">Iv. 엔터티, 인코딩, 국제화</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ea5bae565d49588f6b00e94f29015f80" class="toggle"  />
+    <label for="section-ea5bae565d49588f6b00e94f29015f80" class="flex justify-between">
+      <a role="button" class="">V. 콘텐츠 발행 및 배포</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/study-gram"  target="_blank" rel="noopener">
+        Github Organizations
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>02. Url과 리소스</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-인터넷의-리소스-탐색하기">2.1 인터넷의 리소스 탐색하기</a></li>
+    <li><a href="#22-url-문법">2.2 URL 문법</a></li>
+    <li><a href="#23-단축-url">2.3 단축 URL</a></li>
+    <li><a href="#24-안전하지-않은-문자">2.4 안전하지 않은 문자</a></li>
+    <li><a href="#25-스킴의-바다">2.5 스킴의 바다</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="url과-리소스">
+  URL과 리소스
+  <a class="anchor" href="#url%ea%b3%bc-%eb%a6%ac%ec%86%8c%ec%8a%a4">#</a>
+</h1>
+<h2 id="21-인터넷의-리소스-탐색하기">
+  2.1 인터넷의 리소스 탐색하기
+  <a class="anchor" href="#21-%ec%9d%b8%ed%84%b0%eb%84%b7%ec%9d%98-%eb%a6%ac%ec%86%8c%ec%8a%a4-%ed%83%90%ec%83%89%ed%95%98%ea%b8%b0">#</a>
+</h2>
+<p>URL(Uniform Resource Locator)은 인터넷의 리소스를 가리키는 표준이름이다.</p>
+<p>URL은 전자정보 일부를 가리키고 그것이 어디에 있고 어떻게 접근할 수 있는지 알려준다.</p>
+<p>URL은 브라우저가 정보를 찾는데 필요한 리소스의 위치를 가리킨다.</p>
+<p>URL은 통합 자원 식별자(Uniform Resource Indentifier) 혹은 URI라고 불리는 더 일반화된 부류의 부분집합이다.</p>
+<p>URN(Uniform Resource Name)은 현재 그 리소스가 어디에 존재하든 상관없이 그 이름만으로 리소스를 식별하는데 비해 URL은 리소스가 어디 있느지 설명해서 리소스를 식별한다.</p>
+<p>이 셋의 관계를 그림으로 보면 아래와 같다.</p>
+<p>
+  <img src="/images/http/chapter2/1.png" alt="url-uri" />
+
+  <a href="https://danielmiessler.com/study/difference-between-uri-url/">참조 및 이미지 - The Real Difference Between a URL and a URI</a></p>
+<p>다음과 같은 URL이 있다고 할때</p>
+<p><code>https://study.springboot.kr/docs/HTTP-완벽가이드/I.-HTTP-웹의-기초/02.URL과-리소스/</code></p>
+<p>URL의 첫 부분인 <code>https</code>는 URL의 스킴, URL 두번째 부분인 <code>study.springboot.kr</code>은 서버의 위치이고 URL의 세번째 부분인 <code>/docs/HTTP-완벽가이드/I.-HTTP-웹의-기초/02.URL과-리소스/</code>는 리소스의 경로다.</p>
+<p>각 부분의 역할을 보면</p>
+<ul>
+<li>스킴(scheme) - 웹 클라이언트가 리소스에 어떻게 접근하는지 알려준다.
+<ul>
+<li>ex) https, ftp, rtsp</li>
+</ul>
+</li>
+<li>서버의 위치 - 웹 클라이언트가 리소스가 어디에 호스팅 되어 있는지 알려준다.</li>
+<li>리소스의 경로 - 서버에 존재하는 로컬 리소스들 중에서 요청받은 리소스가 무엇인지 알려준다.</li>
+</ul>
+<p>아래의 그림을 한번보고 넘어가길 바란다.</p>
+<p>
+  <img src="/images/http/chapter2/2.png" alt="url-uri" />
+
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL">참조 및 이미지 - What is a URL?</a></p>
+<h2 id="22-url-문법">
+  2.2 URL 문법
+  <a class="anchor" href="#22-url-%eb%ac%b8%eb%b2%95">#</a>
+</h2>
+<p>URL의 문법을 쪼개면 일반적으로 9개의 부분으로 나뉘게 된다</p>
+<p>
+  <img src="/images/http/chapter2/3.webp" alt="url-uri" /></p>
+<p>
+  <a href="https://quizlet.com/255966740/5-urls-and-uris-flash-cards/">참조 및 이미지 - URLs and URIs</a></p>
+<ul>
+<li>스킴</li>
+<li>사용자 이름</li>
+<li>비밀번호</li>
+<li>호스트</li>
+<li>포트</li>
+<li>경로</li>
+<li>파라미터</li>
+<li>질의</li>
+<li>프래그먼트</li>
+</ul>
+<h2 id="23-단축-url">
+  2.3 단축 URL
+  <a class="anchor" href="#23-%eb%8b%a8%ec%b6%95-url">#</a>
+</h2>
+<p>상대 URL은 짧게 표기하는 방식이다.</p>
+<p>상대 URL 문법에 따르면 HTML 작성자는 URL에 스킴과 호스트 그리고 다른 컴포넌트들을 입력하지 않아도 된다.</p>
+<p>예로 현재 사이트에서 다음과 같은 코드를 사용 할 경우</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./hi.png&#34;</span>&gt;
+</span></span></code></pre></div><p>기저 URL을 사용해 기술하지 않은 정보를 추측할 수 있다.</p>
+<p>기저 URL을 사용하게 되면 절대 URL은 <code>https://study.springboot.kr/hi.png</code> 가 된다.</p>
+<h2 id="24-안전하지-않은-문자">
+  2.4 안전하지 않은 문자
+  <a class="anchor" href="#24-%ec%95%88%ec%a0%84%ed%95%98%ec%a7%80-%ec%95%8a%ec%9d%80-%eb%ac%b8%ec%9e%90">#</a>
+</h2>
+<p>다음의 글로 대체 합니다.</p>
+<p>
+  <a href="https://www.urlencoder.io/learn/">What is URL Encoding and How does it work?</a></p>
+<h2 id="25-스킴의-바다">
+  2.5 스킴의 바다
+  <a class="anchor" href="#25-%ec%8a%a4%ed%82%b4%ec%9d%98-%eb%b0%94%eb%8b%a4">#</a>
+</h2>
+<p>다음의 위키디피아 문서로 대체 합니다.</p>
+<p>
+  <a href="https://en.wikipedia.org/wiki/List_of_URI_schemes">List_of_URI_schemes</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-인터넷의-리소스-탐색하기">2.1 인터넷의 리소스 탐색하기</a></li>
+    <li><a href="#22-url-문법">2.2 URL 문법</a></li>
+    <li><a href="#23-단축-url">2.3 단축 URL</a></li>
+    <li><a href="#24-안전하지-않은-문자">2.4 안전하지 않은 문자</a></li>
+    <li><a href="#25-스킴의-바다">2.5 스킴의 바다</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

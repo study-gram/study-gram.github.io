@@ -12,7 +12,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/01.HTTP-%EA%B0%9C%EA%B4%80/</guid>
-      <description>HTTP 개관 # 1.1 HTTP: 인터넷의 멀티미디어 배달부 # HTTP란? # 전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다. 1.2 웹 클라이언트와 서버 # 웹 서버란? # 인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다. 웹 서버는 HTTP 프로토콜로 통신하기 때문에 보통 HTTP 서버라고도 불린다.</description>
+      <description>HTTP 개관 #  1.1 HTTP: 인터넷의 멀티미디어 배달부 #  HTTP란? #   전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다.  1.2 웹 클라이언트와 서버 #  웹 서버란? #   인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/</guid>
+      <description>URL과 리소스 #  2.1 인터넷의 리소스 탐색하기 #  URL(Uniform Resource Locator)은 인터넷의 리소스를 가리키는 표준이름이다.
+URL은 전자정보 일부를 가리키고 그것이 어디에 있고 어떻게 접근할 수 있는지 알려준다.
+URL은 브라우저가 정보를 찾는데 필요한 리소스의 위치를 가리킨다.
+URL은 통합 자원 식별자(Uniform Resource Indentifier) 혹은 URI라고 불리는 더 일반화된 부류의 부분집합이다.
+URN(Uniform Resource Name)은 현재 그 리소스가 어디에 존재하든 상관없이 그 이름만으로 리소스를 식별하는데 비해 URL은 리소스가 어디 있느지 설명해서 리소스를 식별한다.</description>
     </item>
     
   </channel>
