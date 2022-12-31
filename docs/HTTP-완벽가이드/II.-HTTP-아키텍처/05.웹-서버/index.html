@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="웹 서버 #  5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="웹 서버 #  5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/05.%EC%9B%B9-%EC%84%9C%EB%B2%84/" /><meta property="article:section" content="docs" />
+
+
+
+<title>05.웹 서버 | StudyGram</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.22119d77df1853d11c57656bf6608dd3422b212d67a6b0b96e640386f26ba69a.js" integrity="sha256-IhGdd98YU9EcV2Vr9mCN00IrIS1nprC5bmQDhvJrppo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://avatars.githubusercontent.com/u/103309504?s=200&amp;v=4" alt="Logo" /><span>StudyGram</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26bcd5de53e4319f2b601752bbfc0e0" class="toggle" checked />
+    <label for="section-b26bcd5de53e4319f2b601752bbfc0e0" class="flex justify-between">
+      <a role="button" class="">HTTP 완벽가이드</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8990c75d12be043f4eefa92935e17823" class="toggle"  />
+    <label for="section-8990c75d12be043f4eefa92935e17823" class="flex justify-between">
+      <a role="button" class="">I. HTTP 웹의 기초</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/01.HTTP-%EA%B0%9C%EA%B4%80/" class="">01. HTTP 개관</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. Url과 리소스</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/03.HTTP-%EB%A9%94%EC%8B%9C%EC%A7%80/" class="">03. HTTP 메시지</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-140a36bd7c0aa79db2f6358c88f05458" class="toggle" checked />
+    <label for="section-140a36bd7c0aa79db2f6358c88f05458" class="flex justify-between">
+      <a role="button" class="">Ii. HTTP 아키텍처</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/05.%EC%9B%B9-%EC%84%9C%EB%B2%84/" class="active">05.웹 서버</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e53409e523a6780c2544e3baf04df516" class="toggle"  />
+    <label for="section-e53409e523a6780c2544e3baf04df516" class="flex justify-between">
+      <a role="button" class="">Iii. 식별, 인가, 보안</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a63715ac1a7980191779803ea59e060f" class="toggle"  />
+    <label for="section-a63715ac1a7980191779803ea59e060f" class="flex justify-between">
+      <a role="button" class="">Iv. 엔터티, 인코딩, 국제화</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ea5bae565d49588f6b00e94f29015f80" class="toggle"  />
+    <label for="section-ea5bae565d49588f6b00e94f29015f80" class="flex justify-between">
+      <a role="button" class="">V. 콘텐츠 발행 및 배포</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/study-gram"  target="_blank" rel="noopener">
+        Github Organizations
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>05.웹 서버</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#51-다채로운-웹-서버">5.1 다채로운 웹 서버</a>
+      <ul>
+        <li><a href="#511-웹-서버-구현">5.1.1 웹 서버 구현</a></li>
+        <li><a href="#512-다목적-소프트웨어-웹-서버">5.1.2 다목적 소프트웨어 웹 서버</a></li>
+        <li><a href="#513-임베디드-웹-서버">5.1.3 임베디드 웹 서버</a></li>
+      </ul>
+    </li>
+    <li><a href="#52-간단한-펄-웹-서버">5.2 간단한 펄 웹 서버</a></li>
+    <li><a href="#53-진짜-웹-서버가-하는-일">5.3 진짜 웹 서버가 하는 일</a></li>
+    <li><a href="#54-단계-1-클라이언트-커넥션-수락">5.4 단계 1: 클라이언트 커넥션 수락</a>
+      <ul>
+        <li><a href="#541-새-커넥션-다루기">5.4.1 새 커넥션 다루기</a></li>
+        <li><a href="#542-클라이언트-호스트-명-식별">5.4.2 클라이언트 호스트 명 식별</a></li>
+        <li><a href="#543-ident를-통해-클라이언트-사용자-알아내기">5.4.3 ident를 통해 클라이언트 사용자 알아내기</a></li>
+      </ul>
+    </li>
+    <li><a href="#55-단계-2-요청-메시지-수신">5.5 단계 2: 요청 메시지 수신</a>
+      <ul>
+        <li><a href="#551-메시지의-내부-표현">5.5.1 메시지의 내부 표현</a></li>
+        <li><a href="#552-커넥션-입력출력-처리-아키텍쳐">5.5.2 커넥션 입력/출력 처리 아키텍쳐</a></li>
+      </ul>
+    </li>
+    <li><a href="#56-단계3-요청-처리">5.6 단계3: 요청 처리</a></li>
+    <li><a href="#57-단계4-리소스의-매핑과-접근">5.7 단계4: 리소스의 매핑과 접근</a>
+      <ul>
+        <li><a href="#571-docroot">5.7.1 Docroot</a></li>
+        <li><a href="#572-디렉터리-목록">5.7.2 디렉터리 목록</a></li>
+        <li><a href="#573-동적-콘텐츠-리소스-매핑">5.7.3 동적 콘텐츠 리소스 매핑</a></li>
+        <li><a href="#574-서버사이드-인클루드server-side-includes-ssi">5.7.4 서버사이드 인클루드(Server-Side Includes, SSI)</a></li>
+        <li><a href="#575-접근-제어">5.7.5 접근 제어</a></li>
+      </ul>
+    </li>
+    <li><a href="#58-단계5-응답-만들기">5.8 단계5: 응답 만들기</a>
+      <ul>
+        <li><a href="#581-응답-엔티티">5.8.1 응답 엔티티</a></li>
+        <li><a href="#582-mime-타입-결정하기">5.8.2 MIME 타입 결정하기</a></li>
+        <li><a href="#583-리다이렉션">5.8.3 리다이렉션</a></li>
+      </ul>
+    </li>
+    <li><a href="#59-단계6-응답-보내기">5.9 단계6: 응답 보내기</a></li>
+    <li><a href="#510-단계7-로깅">5.10 단계7: 로깅</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="웹-서버">
+  웹 서버
+  <a class="anchor" href="#%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
+</h1>
+<h2 id="51-다채로운-웹-서버">
+  5.1 다채로운 웹 서버
+  <a class="anchor" href="#51-%eb%8b%a4%ec%b1%84%eb%a1%9c%ec%9a%b4-%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
+</h2>
+<ul>
+<li>웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다.</li>
+<li>웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.</li>
+</ul>
+<h3 id="511-웹-서버-구현">
+  5.1.1 웹 서버 구현
+  <a class="anchor" href="#511-%ec%9b%b9-%ec%84%9c%eb%b2%84-%ea%b5%ac%ed%98%84">#</a>
+</h3>
+<ul>
+<li>웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다.</li>
+<li>웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다.</li>
+<li>웹 서버는 여러가지 형태가 가능하다.
+<ul>
+<li>다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다.</li>
+<li>종종 어떤 회사들은 사용자에게 판매할 전자기기 안에 몇 개의 컴퓨터 칩만으로 구현된 웹 서버를 내장시켜서 완전한 관리 콘솔로 제공하기도 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="512-다목적-소프트웨어-웹-서버">
+  5.1.2 다목적 소프트웨어 웹 서버
+  <a class="anchor" href="#512-%eb%8b%a4%eb%aa%a9%ec%a0%81-%ec%86%8c%ed%94%84%ed%8a%b8%ec%9b%a8%ec%96%b4-%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
+</h3>
+<ul>
+<li>다목적 소프트웨어 웹 서버는 네트워크에 연결된 표준 컴퓨터 시스템에서 동작한다.</li>
+<li>웹 서버 소프트웨어는 거의 모든 컴퓨터와 운영체제에서 동작한다.</li>
+</ul>
+<h3 id="513-임베디드-웹-서버">
+  5.1.3 임베디드 웹 서버
+  <a class="anchor" href="#513-%ec%9e%84%eb%b2%a0%eb%94%94%eb%93%9c-%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
+</h3>
+<ul>
+<li>임베디드 웹 서버는 일반 소비자용 제품에 내장될 목적으로 만들어진 작은 웹 서버이다.</li>
+<li>사용자가 가들의 일반 소비자용 기기를 간편한 웹 브라우저 인터페이스로 관리할 수 있게 한다.</li>
+</ul>
+<h2 id="52-간단한-펄-웹-서버">
+  5.2 간단한 펄 웹 서버
+  <a class="anchor" href="#52-%ea%b0%84%eb%8b%a8%ed%95%9c-%ed%8e%84-%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
+</h2>
+<ul>
+<li>완전한 기능을 갖춘 HTTP 서버를 만들고자 한다면 50,000줄이 넘는 코드로 되어있고, 부가적인 처리 모듈들을 더 하면 훨씬 커진다.</li>
+<li>HTTP/1.1의 기능들을 지원하려면, 풍부한 리소스 지원, 가상 호스팅, 접근 제어, 로깅, 설정, 모니터링, 그 외 성능을 위한 기능 필요하다.</li>
+</ul>
+<h2 id="53-진짜-웹-서버가-하는-일">
+  5.3 진짜 웹 서버가 하는 일
+  <a class="anchor" href="#53-%ec%a7%84%ec%a7%9c-%ec%9b%b9-%ec%84%9c%eb%b2%84%ea%b0%80-%ed%95%98%eb%8a%94-%ec%9d%bc">#</a>
+</h2>
+<ol>
+<li>커넥션을 맺는다.
+<ul>
+<li>클라이언틔 접속을 받아들이거나, 원치 않은 클라이언트라면 닫는다.</li>
+</ul>
+</li>
+<li>요청을 받는다.
+<ul>
+<li>HTTP 요청 메시지를 네트워크로부터 읽어 들인다.</li>
+</ul>
+</li>
+<li>요청을 처리한다.
+<ul>
+<li>요청 메시지를 해석하고 행동을 취한다.</li>
+</ul>
+</li>
+<li>리소스에 접근한다.
+<ul>
+<li>메시지에서 지정한 리소스에 접근한다.</li>
+</ul>
+</li>
+<li>응답을 만든다.
+<ul>
+<li>올바른 헤더를 포함한 HTTP 응답 메시지를 생성한다.</li>
+</ul>
+</li>
+<li>응답을 보낸다.
+<ul>
+<li>응답을 클라이언트에게 돌려준다.</li>
+</ul>
+</li>
+<li>트랜잭션을 로그로 남긴다.
+<ul>
+<li>로그파일에 트랜잭션 오나료에 대한 기록을 남긴다.   <br>
+
+  <img src="/images/http/chapter5/05-1.png#center" alt="기본 웹 서버 요청단계" /></li>
+</ul>
+</li>
+</ol>
+<h2 id="54-단계-1-클라이언트-커넥션-수락">
+  5.4 단계 1: 클라이언트 커넥션 수락
+  <a class="anchor" href="#54-%eb%8b%a8%ea%b3%84-1-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%bb%a4%eb%84%a5%ec%85%98-%ec%88%98%eb%9d%bd">#</a>
+</h2>
+<ul>
+<li>클라이언트가 이미 서버에 대해 열려있는 지속적 커네겻을 갖고 있다면, 클라이언트는 요청을 보내기 위해 그 커넥션을 사용할 수 있다.</li>
+<li>만약 가지고 있지 않다면, 클라이언트는 서버에 대한 새 커낵션을 열어야만 한다.</li>
+</ul>
+<h3 id="541-새-커넥션-다루기">
+  5.4.1 새 커넥션 다루기
+  <a class="anchor" href="#541-%ec%83%88-%ec%bb%a4%eb%84%a5%ec%85%98-%eb%8b%a4%eb%a3%a8%ea%b8%b0">#</a>
+</h3>
+<ul>
+<li>클라이언트가 웹 서버에 TCP 커넥션을 요청하면, 웹 서버는 그 커넥션을 맺고 TCP 커넥션에서 IP 주소를 추출하여 커넥션 맞은편에 어떤 클라이언트가 있는지 확인한다.</li>
+<li>새 커넥션이 맺어지면, 서버는 새 커넥션을 커넥션 목록에 추가하고 커넥션에서 오가는 데이터를 지켜보기 위한 준비를 한다.</li>
+<li>웹 서버는 어떤 커넥션이든 마음대로 거절하거나 즉시 닫을 수 있다.</li>
+</ul>
+<h3 id="542-클라이언트-호스트-명-식별">
+  5.4.2 클라이언트 호스트 명 식별
+  <a class="anchor" href="#542-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ed%98%b8%ec%8a%a4%ed%8a%b8-%eb%aa%85-%ec%8b%9d%eb%b3%84">#</a>
+</h3>
+<ul>
+<li>대부분의 웹 서버는 역방향 DNS 를 사용해서 클라이언트의 IP 주소를 클라이언트의 호스트 명으로 변환화도록 설정되어 있다.</li>
+<li>웹 서버는 클라이언트 호스트 명을 구체적인 접근 제어와 로깅을 위해 사용할 수 있다.</li>
+<li>많은 대용량 웹 서버는 호스트 명 분석을 꺼두거나 특정 콘텐츠에 대해서만 켜놓는다.</li>
+</ul>
+<h3 id="543-ident를-통해-클라이언트-사용자-알아내기">
+  5.4.3 ident를 통해 클라이언트 사용자 알아내기
+  <a class="anchor" href="#543-ident%eb%a5%bc-%ed%86%b5%ed%95%b4-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%82%ac%ec%9a%a9%ec%9e%90-%ec%95%8c%ec%95%84%eb%82%b4%ea%b8%b0">#</a>
+</h3>
+<ul>
+<li>ident 프로토콜은 서버에게 어떤 사용자 이름이 HTTP 커넥션을 초기화했는지 찾아낼 수 있게 해준다.</li>
+</ul>
+<h2 id="55-단계-2-요청-메시지-수신">
+  5.5 단계 2: 요청 메시지 수신
+  <a class="anchor" href="#55-%eb%8b%a8%ea%b3%84-2-%ec%9a%94%ec%b2%ad-%eb%a9%94%ec%8b%9c%ec%a7%80-%ec%88%98%ec%8b%a0">#</a>
+</h2>
+<ul>
+<li>커넥션에 데이터가 도착하면, 웹 서버는 네트워크 커넥션에서 그 데이터를 읽어 들이고 파싱하여 요청 메시지를 구성한다.</li>
+<li>요청 메시지를 파싱할 때, 웹서버는 아래와 같은 일을 한다.
+<ol>
+<li>요청줄을 파싱하여 요청 메소드, 지정된 리소스의 식별자, 버전 번호를 찾는다.</li>
+<li>메시지 헤더들을 읽는다.</li>
+<li>(존재시)헤더의 끝을 의미하는 CRLF로 끝나는 빈 줄을 찾아낸다.</li>
+<li>요청 본문이 있다면, 읽어 들인다.</li>
+</ol>
+</li>
+<li>요청 메시지를 파싱할 때, 웹 서버는 입력 데이터를 네트워크로부터 불규칙적으로 받는다.</li>
+<li>네트워크 커넥션은 언제라도 끊길 수 있다.</li>
+</ul>
+<h3 id="551-메시지의-내부-표현">
+  5.5.1 메시지의 내부 표현
+  <a class="anchor" href="#551-%eb%a9%94%ec%8b%9c%ec%a7%80%ec%9d%98-%eb%82%b4%eb%b6%80-%ed%91%9c%ed%98%84">#</a>
+</h3>
+<ul>
+<li>웹 서버는 요청 메시지를 쉽게 다룰 수 있도록 내부의 자료 구조에 저장한다.</li>
+</ul>
+<h3 id="552-커넥션-입력출력-처리-아키텍쳐">
+  5.5.2 커넥션 입력/출력 처리 아키텍쳐
+  <a class="anchor" href="#552-%ec%bb%a4%eb%84%a5%ec%85%98-%ec%9e%85%eb%a0%a5%ec%b6%9c%eb%a0%a5-%ec%b2%98%eb%a6%ac-%ec%95%84%ed%82%a4%ed%85%8d%ec%b3%90">#</a>
+</h3>
+<ul>
+<li>공성능 웹 서버는 수천 개의 커넥션을 동시에 열 수 있도록 지원한다.</li>
+<li>수천 개의 커넥션들은 웹 서버가 전 세계의 클라이언트들과 각각 한 개 이상의 커넥션을 통해 통신할 수 있게 한다.</li>
+<li>웹 서버 아키텍처의 차이에 따라 요청을 처리하는 방식도 달라진다.
+
+  <img src="/images/http/chapter5/05-2.png#center" alt="웹 서버 입력/출력 아키텍처" /></li>
+</ul>
+<blockquote>
+<p>단일 스레드</p>
+</blockquote>
+<ul>
+<li>한 번 요청에 하나씩 처리한다.</li>
+<li>구현은 간단하지만 처리 도중에는 다른 모든 커넥션이 기다려야만 한다.</li>
+</ul>
+<blockquote>
+<p>멀티 프로세스와 멀티 스레드</p>
+</blockquote>
+<ul>
+<li>여러 요청을 동시 처리하기 위해 여러 개의 프로세스 혹은 고효율 스레드를 할당한다.</li>
+<li>스레드/프로세스는 필요할 때마다 만들어질수도 있고, 미리 만들어 사용할 수도 있다.</li>
+<li>스레드/프로세스가 너무 많아지면, 메모라니 시스 리소스를 소비하기 때문에 보통 최대 개수를 제한한다.</li>
+</ul>
+<blockquote>
+<p>다중 I/O</p>
+</blockquote>
+<ul>
+<li>다중 아키텍처에서는 모든 커넥션은 동시에 그 활동을 감시당한다.</li>
+<li>어떤 커넥션의 상태가 바뀌면 그 커넥션에 대해 작은 양의 처리가 수행된다.</li>
+</ul>
+<blockquote>
+<p>다중 멀티스레드</p>
+</blockquote>
+<ul>
+<li>CPU 여러 개의 이점을 살리기 위해 멀티쓰레(b)와 다중화(c)를 결합한 것이다.</li>
+<li>여러 개의 쓰레드(보통 하나의 물리적 프로세스)는 각각 열려있는 커넥션을 감시하고 각 커넥션에 대해 조금씩 작업을 수행한다.</li>
+</ul>
+<h2 id="56-단계3-요청-처리">
+  5.6 단계3: 요청 처리
+  <a class="anchor" href="#56-%eb%8b%a8%ea%b3%843-%ec%9a%94%ec%b2%ad-%ec%b2%98%eb%a6%ac">#</a>
+</h2>
+<ul>
+<li>웹 서버가 요청을 받으면, 서버는 요청으로부터 메서드, 리소스, 헤더, 본문을 얻어내여 처리한다.</li>
+</ul>
+<h2 id="57-단계4-리소스의-매핑과-접근">
+  5.7 단계4: 리소스의 매핑과 접근
+  <a class="anchor" href="#57-%eb%8b%a8%ea%b3%844-%eb%a6%ac%ec%86%8c%ec%8a%a4%ec%9d%98-%eb%a7%a4%ed%95%91%ea%b3%bc-%ec%a0%91%ea%b7%bc">#</a>
+</h2>
+<ul>
+<li>웹 서버는 리소스 서버이다.</li>
+<li>HTML 페이지나 JPED 이미지 같은 미리 만들어 진 콘텐츠를 제공하며, 서버 위에서 동작하는 리소스 생성 어플리케이션을 통해 만들어진 동적 컨텐츠도 제공한다.</li>
+<li>웹 서버가 클라이언트에 콘텐츠를 전달하려면, 그전에 요청 메시지의 URI에 대응하는 알맞은 콘텐츠를 웹 서버에서 찾아서 그 콘텐츠의 원천을 식별해야 한다.</li>
+</ul>
+<h3 id="571-docroot">
+  5.7.1 Docroot
+  <a class="anchor" href="#571-docroot">#</a>
+</h3>
+<ul>
+<li>리소스 매핑의 가장 단순한 형태는 요청 URI를 웹 서버의 파일 시스템 안에 있는 파일 이름으로 사용하는 것이다.</li>
+<li>웹 서버의 특별한 폴더를 웹 콘텐츠를 통해 예약해두는데, 이 폴더를 docroot이라고 부른다.</li>
+<li>웹 서버 내부 설정에서 문서 루트를 설정 가능하다.</li>
+<li>대부분의 웹 서버는 루트 위의 파일을 보려고 하는 URI를 허용하지 않는다.</li>
+</ul>
+<blockquote>
+<p>가상 호스팅된 docroot</p>
+</blockquote>
+<ul>
+<li>가상 호스팅 웹 서버는 각 사이트에 그들만의 분리된 문서 루트를 주는 방법으로 하나의 웹 서버에서 여러 개의 웹 사이트를 호스팅한다.</li>
+<li>웹 서버는 URI나 Host 헤더에서 얻은 IP 주소나 호스트 명을 이용해서 올바른 문서 루트를 식별한다.</li>
+</ul>
+<blockquote>
+<p>사용자 홈 디렉터리 docroots</p>
+</blockquote>
+<ul>
+<li>사용자들이 한 대의 웹 서버에서 각자의 개인 웹사이트를 만들 수 있도록 해주는 경우도 있다.</li>
+<li>보통 빗금(/)과 물결표(~) 다음에 사용자 이름이 오는 것으로 시작하는 URI는 그 사용자의 개인 docroot를 가리킨다.</li>
+</ul>
+<h3 id="572-디렉터리-목록">
+  5.7.2 디렉터리 목록
+  <a class="anchor" href="#572-%eb%94%94%eb%a0%89%ed%84%b0%eb%a6%ac-%eb%aa%a9%eb%a1%9d">#</a>
+</h3>
+<ul>
+<li>웹 서버는 경로가 파일이 아닌 디렉토리를 가리키는 URL에 대한 요청을 받을 수 있다.</li>
+<li>대부분의 웹 서버는 클라이언트가 디렉터리 URL을 요청했을 때 다음과 같은 해동을 할 수 있다.
+<ul>
+<li>에러를 반환한다.</li>
+<li>디렉터리 대신 특별한 파일을 반환한다.</li>
+<li>디렉터리를 탐색해서 그 내용을 담은 HTML 페이지를 반환한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="573-동적-콘텐츠-리소스-매핑">
+  5.7.3 동적 콘텐츠 리소스 매핑
+  <a class="anchor" href="#573-%eb%8f%99%ec%a0%81-%ec%bd%98%ed%85%90%ec%b8%a0-%eb%a6%ac%ec%86%8c%ec%8a%a4-%eb%a7%a4%ed%95%91">#</a>
+</h3>
+<ul>
+<li>웹 서버는 URI를 동적 리소스에 매핑할 수 있다.</li>
+<li>어떤 리소스가 동적 리소스라면, 어플리케이션 서버는 그에 대한 동적 콘텐츠 생성 프로그램이 어디에 있는지, 그리고 어떻게 그 프로그램을 실행하는지 알려줄 수 있어야 한다.</li>
+</ul>
+<h3 id="574-서버사이드-인클루드server-side-includes-ssi">
+  5.7.4 서버사이드 인클루드(Server-Side Includes, SSI)
+  <a class="anchor" href="#574-%ec%84%9c%eb%b2%84%ec%82%ac%ec%9d%b4%eb%93%9c-%ec%9d%b8%ed%81%b4%eb%a3%a8%eb%93%9cserver-side-includes-ssi">#</a>
+</h3>
+<ul>
+<li>어떤 리소스가 서버사이드 인클루드를 포함하고 있는 것으로 설정되어 있다면, 서버는 그 리소스의 콘텐츠를 클라이언트에게 보내기 전에 처리한다.</li>
+</ul>
+<h3 id="575-접근-제어">
+  5.7.5 접근 제어
+  <a class="anchor" href="#575-%ec%a0%91%ea%b7%bc-%ec%a0%9c%ec%96%b4">#</a>
+</h3>
+<ul>
+<li>웹 서버는 각각의 리소스에 접근 제어를 할당할 수 있다.</li>
+</ul>
+<h2 id="58-단계5-응답-만들기">
+  5.8 단계5: 응답 만들기
+  <a class="anchor" href="#58-%eb%8b%a8%ea%b3%845-%ec%9d%91%eb%8b%b5-%eb%a7%8c%eb%93%a4%ea%b8%b0">#</a>
+</h2>
+<ul>
+<li>서버가 리소스를 식별하면, 서버는 요청 메서드로 서술되는 동작을 수행한 뒤 응답 메시지를 반환한다.</li>
+<li>응답 메시지는 응답 상태 코드, 응답 헤더, 응답 본문을 포함한다.</li>
+</ul>
+<h3 id="581-응답-엔티티">
+  5.8.1 응답 엔티티
+  <a class="anchor" href="#581-%ec%9d%91%eb%8b%b5-%ec%97%94%ed%8b%b0%ed%8b%b0">#</a>
+</h3>
+<ul>
+<li>만약 응답 본문이 있다면, 응답 메시지는 주로 다음을 포함한다.
+<ul>
+<li>응답 본문의 MIME 타입을 서술하는 Content-Type 헤더</li>
+<li>응답 본문의 길이를 서술하는 Content-Length 헤더</li>
+<li>실제 응답 본문의 내용</li>
+</ul>
+</li>
+</ul>
+<h3 id="582-mime-타입-결정하기">
+  5.8.2 MIME 타입 결정하기
+  <a class="anchor" href="#582-mime-%ed%83%80%ec%9e%85-%ea%b2%b0%ec%a0%95%ed%95%98%ea%b8%b0">#</a>
+</h3>
+<blockquote>
+<p>mime.types</p>
+</blockquote>
+<ul>
+<li>웹 서버는 MIME 타입을 나타내기 위해 파일 이름의 확장자를 사용할 수 있다.</li>
+<li>웹 서버는 각 리소스의 MIME 타입을 계산하기 위해 확장자별 MIME 타입이 담겨 있는 파일을 탐색한다.</li>
+</ul>
+<blockquote>
+<p>매직 타이핑(Magic Typing)</p>
+</blockquote>
+<ul>
+<li>파일 내용을 검사해서 알려진 패턴에 대한 테이블(매직 파일)에 해당하는 패턴이 있는지 찾아보는 방식이다.</li>
+<li>속도가 느리긴 하지만 파일이 표준 확장자 없이 이름 지어진 경우에 사용하면 좋다.</li>
+</ul>
+<blockquote>
+<p>유형 명시(Explicit Typing)</p>
+</blockquote>
+<ul>
+<li>파일 확장자나 내용에 관계없이 어떤 MIME 타입을 갖도록 웹 서버가 지정하는 방식이다.</li>
+</ul>
+<blockquote>
+<p>유형 협상(Type Negotiation)</p>
+</blockquote>
+<ul>
+<li>어떤 웹 서버는 한 리소스가 여러 종류의 문서 형식에 속하도록 설정할 수 있다.
+
+  <img src="/images/http/chapter5/05-3.png#center" alt="MIME 타입 목록 파일 사용" /></li>
+</ul>
+<h3 id="583-리다이렉션">
+  5.8.3 리다이렉션
+  <a class="anchor" href="#583-%eb%a6%ac%eb%8b%a4%ec%9d%b4%eb%a0%89%ec%85%98">#</a>
+</h3>
+<ul>
+<li>웹 서버는 종종 성공 메시지 대신 리다이렉션 응답을 반환한다.</li>
+<li>웹 서버는 요청을 수행하기 위해 브라우저가 다른 곳으로 가도록 리다이렉트 할 수 있다.</li>
+</ul>
+<h2 id="59-단계6-응답-보내기">
+  5.9 단계6: 응답 보내기
+  <a class="anchor" href="#59-%eb%8b%a8%ea%b3%846-%ec%9d%91%eb%8b%b5-%eb%b3%b4%eb%82%b4%ea%b8%b0">#</a>
+</h2>
+<ul>
+<li>웹 서버는 받을 때와 마찬가지로 커넥션 너머로 데이터를 보낼 때도 비슷한 이슈에 직면한다.</li>
+<li>서버는 커넥션 상태를 추적해야 하며 지속적인 커넥션은 특별히 주의해야 한다.</li>
+<li>비지속 커넥션
+<ul>
+<li>모든 메시지를 전송 후 서버 쪽에서 커넥션을 닫는다.</li>
+</ul>
+</li>
+<li>지속 커넥션
+<ul>
+<li>서버가 Content-Length 헤더를 바르게 계산하기 위해 특별한 주의를 필요로 하는 경우 또는 클라이언트가 응답이 언제 끝나는지 알 수 없는 경우에 커넥션을 유지한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="510-단계7-로깅">
+  5.10 단계7: 로깅
+  <a class="anchor" href="#510-%eb%8b%a8%ea%b3%847-%eb%a1%9c%ea%b9%85">#</a>
+</h2>
+<ul>
+<li>트랜잭션이 완료되었을 때 웹 서버는 트랜잭션이 어떻게 수행되었는지에 대한 로그를 로그파일에 기록한다.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#51-다채로운-웹-서버">5.1 다채로운 웹 서버</a>
+      <ul>
+        <li><a href="#511-웹-서버-구현">5.1.1 웹 서버 구현</a></li>
+        <li><a href="#512-다목적-소프트웨어-웹-서버">5.1.2 다목적 소프트웨어 웹 서버</a></li>
+        <li><a href="#513-임베디드-웹-서버">5.1.3 임베디드 웹 서버</a></li>
+      </ul>
+    </li>
+    <li><a href="#52-간단한-펄-웹-서버">5.2 간단한 펄 웹 서버</a></li>
+    <li><a href="#53-진짜-웹-서버가-하는-일">5.3 진짜 웹 서버가 하는 일</a></li>
+    <li><a href="#54-단계-1-클라이언트-커넥션-수락">5.4 단계 1: 클라이언트 커넥션 수락</a>
+      <ul>
+        <li><a href="#541-새-커넥션-다루기">5.4.1 새 커넥션 다루기</a></li>
+        <li><a href="#542-클라이언트-호스트-명-식별">5.4.2 클라이언트 호스트 명 식별</a></li>
+        <li><a href="#543-ident를-통해-클라이언트-사용자-알아내기">5.4.3 ident를 통해 클라이언트 사용자 알아내기</a></li>
+      </ul>
+    </li>
+    <li><a href="#55-단계-2-요청-메시지-수신">5.5 단계 2: 요청 메시지 수신</a>
+      <ul>
+        <li><a href="#551-메시지의-내부-표현">5.5.1 메시지의 내부 표현</a></li>
+        <li><a href="#552-커넥션-입력출력-처리-아키텍쳐">5.5.2 커넥션 입력/출력 처리 아키텍쳐</a></li>
+      </ul>
+    </li>
+    <li><a href="#56-단계3-요청-처리">5.6 단계3: 요청 처리</a></li>
+    <li><a href="#57-단계4-리소스의-매핑과-접근">5.7 단계4: 리소스의 매핑과 접근</a>
+      <ul>
+        <li><a href="#571-docroot">5.7.1 Docroot</a></li>
+        <li><a href="#572-디렉터리-목록">5.7.2 디렉터리 목록</a></li>
+        <li><a href="#573-동적-콘텐츠-리소스-매핑">5.7.3 동적 콘텐츠 리소스 매핑</a></li>
+        <li><a href="#574-서버사이드-인클루드server-side-includes-ssi">5.7.4 서버사이드 인클루드(Server-Side Includes, SSI)</a></li>
+        <li><a href="#575-접근-제어">5.7.5 접근 제어</a></li>
+      </ul>
+    </li>
+    <li><a href="#58-단계5-응답-만들기">5.8 단계5: 응답 만들기</a>
+      <ul>
+        <li><a href="#581-응답-엔티티">5.8.1 응답 엔티티</a></li>
+        <li><a href="#582-mime-타입-결정하기">5.8.2 MIME 타입 결정하기</a></li>
+        <li><a href="#583-리다이렉션">5.8.3 리다이렉션</a></li>
+      </ul>
+    </li>
+    <li><a href="#59-단계6-응답-보내기">5.9 단계6: 응답 보내기</a></li>
+    <li><a href="#510-단계7-로깅">5.10 단계7: 로깅</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
