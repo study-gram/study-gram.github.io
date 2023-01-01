@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="커넥션 관리 #  작성자 nice7677
+ 4.1 TCP 커넥션 #  HTTP 통신은 TCP/IP 위에서 이루어 지며 커넥션이 맺어지면 클라이언트와 서버 컴퓨터 간에 주고받는 메세지들은 손실 혹은 손상되거나 순서가 바뀌지 않고 안전하게 전달된다. (예외 HTTP3는 UDP 간단한 설명은 다음을 읽어보자 위키피디아 - HTTP/3)
+TCP는 신뢰할 수 있는 데이터 전송 통로이며 HTTP에게 신뢰할 만한 통신 방식을 제공하며 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다.
+  참조 - How HTTP request passes through OSI layers for communicating the web server?">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="커넥션 관리 #  작성자 nice7677
+ 4.1 TCP 커넥션 #  HTTP 통신은 TCP/IP 위에서 이루어 지며 커넥션이 맺어지면 클라이언트와 서버 컴퓨터 간에 주고받는 메세지들은 손실 혹은 손상되거나 순서가 바뀌지 않고 안전하게 전달된다. (예외 HTTP3는 UDP 간단한 설명은 다음을 읽어보자 위키피디아 - HTTP/3)
+TCP는 신뢰할 수 있는 데이터 전송 통로이며 HTTP에게 신뢰할 만한 통신 방식을 제공하며 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다.
+  참조 - How HTTP request passes through OSI layers for communicating the web server?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/04.%EC%BB%A4%EB%84%A5%EC%85%98-%EA%B4%80%EB%A6%AC/" /><meta property="article:section" content="docs" />
+
+
+
+<title>04.커넥션 관리 | StudyGram</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.14db4f73c67e0635f13bd7a85d4db0becefca15285e71ce6cb72886a44757653.js" integrity="sha256-FNtPc8Z&#43;BjXxO9eoXU2wvs78oVKF5xzmy3KIakR1dlM=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="https://avatars.githubusercontent.com/u/103309504?s=200&amp;v=4" alt="Logo" /><span>StudyGram</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26bcd5de53e4319f2b601752bbfc0e0" class="toggle" checked />
+    <label for="section-b26bcd5de53e4319f2b601752bbfc0e0" class="flex justify-between">
+      <a role="button" class="">HTTP 완벽가이드</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8990c75d12be043f4eefa92935e17823" class="toggle"  />
+    <label for="section-8990c75d12be043f4eefa92935e17823" class="flex justify-between">
+      <a role="button" class="">I. HTTP 웹의 기초</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/01.HTTP-%EA%B0%9C%EA%B4%80/" class="">01. HTTP 개관</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL-%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. URL 과 리소스</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/03.HTTP-%EB%A9%94%EC%8B%9C%EC%A7%80/" class="">03. HTTP 메시지</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-140a36bd7c0aa79db2f6358c88f05458" class="toggle" checked />
+    <label for="section-140a36bd7c0aa79db2f6358c88f05458" class="flex justify-between">
+      <a role="button" class="">Ii. HTTP 아키텍처</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/04.%EC%BB%A4%EB%84%A5%EC%85%98-%EA%B4%80%EB%A6%AC/" class="active">04.커넥션 관리</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/05.%EC%9B%B9-%EC%84%9C%EB%B2%84/" class="">05.웹 서버</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e53409e523a6780c2544e3baf04df516" class="toggle"  />
+    <label for="section-e53409e523a6780c2544e3baf04df516" class="flex justify-between">
+      <a role="button" class="">Iii. 식별, 인가, 보안</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a63715ac1a7980191779803ea59e060f" class="toggle"  />
+    <label for="section-a63715ac1a7980191779803ea59e060f" class="flex justify-between">
+      <a role="button" class="">Iv. 엔터티, 인코딩, 국제화</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ea5bae565d49588f6b00e94f29015f80" class="toggle"  />
+    <label for="section-ea5bae565d49588f6b00e94f29015f80" class="flex justify-between">
+      <a role="button" class="">V. 콘텐츠 발행 및 배포</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/study-gram"  target="_blank" rel="noopener">
+        Github Organizations
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>04.커넥션 관리</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-tcp-커넥션">4.1 TCP 커넥션</a></li>
+    <li><a href="#42-tcp의-성능에-대한-고려">4.2 TCP의 성능에 대한 고려</a></li>
+    <li><a href="#43-http-커넥션-관리">4.3 HTTP 커넥션 관리</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="커넥션-관리">
+  커넥션 관리
+  <a class="anchor" href="#%ec%bb%a4%eb%84%a5%ec%85%98-%ea%b4%80%eb%a6%ac">#</a>
+</h1>
+<p>작성자 
+  <a href="%22https://github.com/nice7677%22">nice7677</a></p>
+<hr>
+<h2 id="41-tcp-커넥션">
+  4.1 TCP 커넥션
+  <a class="anchor" href="#41-tcp-%ec%bb%a4%eb%84%a5%ec%85%98">#</a>
+</h2>
+<p>HTTP 통신은 TCP/IP 위에서 이루어 지며 커넥션이 맺어지면 클라이언트와 서버 컴퓨터 간에 주고받는 메세지들은 손실 혹은 손상되거나 순서가 바뀌지 않고 안전하게 전달된다.
+(예외 HTTP3는 UDP 간단한 설명은 다음을 읽어보자 
+  <a href="https://ko.wikipedia.org/wiki/HTTP/3">위키피디아 - HTTP/3</a>)</p>
+<p>TCP는 신뢰할 수 있는 데이터 전송 통로이며 HTTP에게 신뢰할 만한 통신 방식을 제공하며 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다.</p>
+<p>
+  <img src="/images/http/chapter4/1.png" alt="http-https-secure-layer" /></p>
+<p>
+  <a href="https://mcheepati.blogspot.com/2012/03/in-which-layer-http-request-works-and.html">참조 - How HTTP request passes through OSI layers for communicating the web server?</a></p>
+<p>그림에서 볼 수 있듯이 HTTPS는 HTTP에 TLS 나 SSL(보안 계층)을 추가한 것이다.</p>
+<p>HTTP가 메시지를 전송하고자 할 경우 현재 연결되어 있는 TCP 커넥션을 통해서 메시지 데이터를 순서대로 보낸다. TCP는 세그먼트라는 단위로 데이터 스트림을 잘게 나누고 세그먼트를 IP 패킷이라고 불리는 봉투에
+담아서 인터넷을 통해 데이터를 전달한다.</p>
+<p>IP 패킷들 각각은 다음을 포함한다.</p>
+<ul>
+<li>IP 패킷 헤더(보통 20바이트)</li>
+<li>TCP 세그먼트 헤더(보통 20바이트)</li>
+<li>TCP 데이터 조각(0 혹은 그 이상의 바이트)</li>
+</ul>
+<p>IP 헤더는 발신자와 목적지 IP 주소, 크기, 기타 플래그를 가진다. TCP 세그머느 헤더는 TCP 포트 번호, TCP 제어 플래그, 그리고 데이터의 순서와 무결성을 검사하기 위해 사용되는 숫자 값을 포함한다.</p>
+<p>
+  <img src="/images/http/chapter4/2.png" alt="IP packets carry TCP segments, which carry chunks of the TCP data stream" /></p>
+<p>TCP 커넥션은 네가지 값으로 식별한다.</p>
+<p><code>&lt;발신지 IP 주소, 발신지 포트, 수신지 IP 주소, 수신지 포트&gt;</code></p>
+<p>이 네 가지 값으로 유일한 커넥션을 생성한다. 서로 다른 두 개의 TCP 커넥션은 네가지 주소 구성요소의 값이 모두 같은 수 없다.</p>
+<table>
+<thead>
+<tr>
+<th>커넥션</th>
+<th>발신지 IP 주소</th>
+<th>발신지 포트</th>
+<th>발신지 포트</th>
+<th>발신지 포트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>209.1.32.34</td>
+<td>2034</td>
+<td>204.62.128.58</td>
+<td>4133</td>
+</tr>
+<tr>
+<td>B</td>
+<td>209.1.32.35</td>
+<td>3227</td>
+<td>204.62.128.58</td>
+<td>4140</td>
+</tr>
+<tr>
+<td>C</td>
+<td>209.1.32.35</td>
+<td>3105</td>
+<td>207.25.71.25</td>
+<td>80</td>
+</tr>
+<tr>
+<td>D</td>
+<td>209.1.33.89</td>
+<td>5100</td>
+<td>207.25.71.25</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <img src="/images/http/chapter4/3.png" alt="Four distinct TCP connections" /></p>
+<p>위의 그림에서 볼 수 있듯이 커넥션 구성요소를 모두 똑같이 가리키고 있는 커넥션은 있을 수 없다.</p>
+<h2 id="42-tcp의-성능에-대한-고려">
+  4.2 TCP의 성능에 대한 고려
+  <a class="anchor" href="#42-tcp%ec%9d%98-%ec%84%b1%eb%8a%a5%ec%97%90-%eb%8c%80%ed%95%9c-%ea%b3%a0%eb%a0%a4">#</a>
+</h2>
+<p>HTTP는 TCP 바로 위에 있기 때문에 TCP 성능에 영향을 받는다. 그렇기 때문에 TCP에 대해 자세히 알아야 한다.</p>
+<p>! TCP 기본 영상으로 다음 영상을 한번 보면 도움이 될거습니다.</p>
+<p>
+  <a href="https://youtu.be/ikDVGYp5dhg?t=15">[10분 테코톡] 👨‍🏫르윈의 TCP UDP</a></p>
+<h2 id="43-http-커넥션-관리">
+  4.3 HTTP 커넥션 관리
+  <a class="anchor" href="#43-http-%ec%bb%a4%eb%84%a5%ec%85%98-%ea%b4%80%eb%a6%ac">#</a>
+</h2>
+<p>HTTP 커넥션의 성능을 향상시킬 수 있는 여러 기술이 있다.</p>
+<p>그중 병렬 커넥션과 지속 커넥션에 대한 장단점을 알아보자.</p>
+<ul>
+<li>병렬 커넥션(parallel) - 여러 개의 커넥션을 맺음으로써 여러개의 트랜잭션을 병렬로 처리할 수 있게 한다.
+<ul>
+<li>장점
+<ul>
+<li>각 커넥션의 지연 시간을 겹치게 하면 총 지연 시간을 줄일 수 있다.</li>
+<li>병렬로 내려받아 커넥션 지연이 겹쳐짐으로써 총 지연시간이 줄어든다.</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>네트워크 대역폭이 좁을 때 느리다.</li>
+<li>다수의 커넥션은 메모리를 많이 소모하고 성능 문제를 발생시킨다.</li>
+<li>커넥션의 수에 제한이 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>지속 커넥션(persistent) - 연결 후에도 TCP 커넥션을 유지해 앞으로 있을 요청에 재사용할 수 있다.
+<ul>
+<li>장점
+<ul>
+<li>커넥션을 맺기 위한 사전 작업과 지연을 줄여 준다.</li>
+<li>튜닝된 커넥션을 유지할 수 있다.</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>잘못 관리할 경우 계속 연결된 상태로 있는 수많은 커넥션이 쌓이게 되어 불필요한 서버와 클라이언트 리소스에 불필요한 소모를 발생시킨다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>지속 커넥션과 병렬 커넥션이 함께 사용될 때에 가장 효과적이다.</p>
+<p>같이 보면 좋은 글</p>
+<p>
+  <a href="https://goodgid.github.io/HTTP-Keep-Alive/">HTTP Keep Alive 알아보기</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-tcp-커넥션">4.1 TCP 커넥션</a></li>
+    <li><a href="#42-tcp의-성능에-대한-고려">4.2 TCP의 성능에 대한 고려</a></li>
+    <li><a href="#43-http-커넥션-관리">4.3 HTTP 커넥션 관리</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

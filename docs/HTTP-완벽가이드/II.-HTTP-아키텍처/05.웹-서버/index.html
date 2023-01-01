@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="웹 서버 #  5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다.">
+<meta name="description" content="웹 서버 #  작성자 jaewon0913
+ 5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="웹 서버 #  5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다." />
+<meta property="og:description" content="웹 서버 #  작성자 jaewon0913
+ 5.1 다채로운 웹 서버 #   웹 서버는 HTTP 요청하고 처리하고 응답을 제공한다. 웹 서버 소프트웨어와 웹페이지 제공에 특화된 장비 양쪽 모두를 가리킨다.  5.1.1 웹 서버 구현 #   웹 서버는 HTTP 및 그 와 관련된 TCP 처리를 구현한 것이다. 웹 서버는 HTTP 프로토콜을 구현하고, 웹 리소스를 관리하고, 웹 서버 관리 기능을 제공한다. 웹 서버는 여러가지 형태가 가능하다.  다목적 소프트웨어 웹 서버를 표준 컴퓨터 시스템에 설치하고 실행할 수 있다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/05.%EC%9B%B9-%EC%84%9C%EB%B2%84/" /><meta property="article:section" content="docs" />
 
@@ -17,7 +19,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.22119d77df1853d11c57656bf6608dd3422b212d67a6b0b96e640386f26ba69a.js" integrity="sha256-IhGdd98YU9EcV2Vr9mCN00IrIS1nprC5bmQDhvJrppo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.14db4f73c67e0635f13bd7a85d4db0becefca15285e71ce6cb72886a44757653.js" integrity="sha256-FNtPc8Z&#43;BjXxO9eoXU2wvs78oVKF5xzmy3KIakR1dlM=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -116,7 +118,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. Url과 리소스</a>
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL-%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. URL 과 리소스</a>
   
 
         </li>
@@ -155,6 +157,19 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/04.%EC%BB%A4%EB%84%A5%EC%85%98-%EA%B4%80%EB%A6%AC/" class="">04.커넥션 관리</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -363,6 +378,9 @@ https://github.com/alex-shpak/hugo-book
   웹 서버
   <a class="anchor" href="#%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>
 </h1>
+<p>작성자 
+  <a href="%22https://github.com/jaewon0913%22">jaewon0913</a></p>
+<hr>
 <h2 id="51-다채로운-웹-서버">
   5.1 다채로운 웹 서버
   <a class="anchor" href="#51-%eb%8b%a4%ec%b1%84%eb%a1%9c%ec%9a%b4-%ec%9b%b9-%ec%84%9c%eb%b2%84">#</a>

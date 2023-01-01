@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HTTP 개관 #  1.1 HTTP: 인터넷의 멀티미디어 배달부 #  HTTP란? #   전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다.  1.2 웹 클라이언트와 서버 #  웹 서버란? #   인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다.">
+<meta name="description" content="HTTP 개관 #  작성자 jaewon0913
+ 1.1 HTTP: 인터넷의 멀티미디어 배달부 #  HTTP란? #   전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다.  1.2 웹 클라이언트와 서버 #  웹 서버란? #   인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="HTTP 개관 #  1.1 HTTP: 인터넷의 멀티미디어 배달부 #  HTTP란? #   전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다.  1.2 웹 클라이언트와 서버 #  웹 서버란? #   인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다." />
+<meta property="og:description" content="HTTP 개관 #  작성자 jaewon0913
+ 1.1 HTTP: 인터넷의 멀티미디어 배달부 #  HTTP란? #   전 세계의 웹 서버로부터 대량의 정보(이미지, HTML 페이지, 텍스트 파일, 동영상 등)를 빠르고, 간편하고, 정확하게 사람들의 PC에 설치된 웹 브라우저로 옮겨준다. 신뢰성 있는 데이터 전송 프로토콜을 사용하므로 데이터가 지구 반대편에서 오더라도 전송 중 손상되거나 꼬이지 않음을 보장한다.  1.2 웹 클라이언트와 서버 #  웹 서버란? #   인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://study.springboot.kr/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/01.HTTP-%EA%B0%9C%EA%B4%80/" /><meta property="article:section" content="docs" />
 
@@ -17,7 +19,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.22119d77df1853d11c57656bf6608dd3422b212d67a6b0b96e640386f26ba69a.js" integrity="sha256-IhGdd98YU9EcV2Vr9mCN00IrIS1nprC5bmQDhvJrppo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.14db4f73c67e0635f13bd7a85d4db0becefca15285e71ce6cb72886a44757653.js" integrity="sha256-FNtPc8Z&#43;BjXxO9eoXU2wvs78oVKF5xzmy3KIakR1dlM=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -116,7 +118,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. Url과 리소스</a>
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/I.-HTTP-%EC%9B%B9%EC%9D%98-%EA%B8%B0%EC%B4%88/02.URL-%EA%B3%BC-%EB%A6%AC%EC%86%8C%EC%8A%A4/" class="">02. URL 과 리소스</a>
   
 
         </li>
@@ -155,6 +157,19 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/HTTP-%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/II.-HTTP-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/04.%EC%BB%A4%EB%84%A5%EC%85%98-%EA%B4%80%EB%A6%AC/" class="">04.커넥션 관리</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -343,6 +358,9 @@ https://github.com/alex-shpak/hugo-book
   HTTP 개관
   <a class="anchor" href="#http-%ea%b0%9c%ea%b4%80">#</a>
 </h1>
+<p>작성자 
+  <a href="%22https://github.com/jaewon0913%22">jaewon0913</a></p>
+<hr>
 <h2 id="11-http-인터넷의-멀티미디어-배달부">
   1.1 HTTP: 인터넷의 멀티미디어 배달부
   <a class="anchor" href="#11-http-%ec%9d%b8%ed%84%b0%eb%84%b7%ec%9d%98-%eb%a9%80%ed%8b%b0%eb%af%b8%eb%94%94%ec%96%b4-%eb%b0%b0%eb%8b%ac%eb%b6%80">#</a>
